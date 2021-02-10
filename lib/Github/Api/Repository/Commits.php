@@ -30,4 +30,14 @@ class Commits extends AbstractApi
     {
         return $this->get('/repos/'.rawurlencode($username).'/'.rawurlencode($repository).'/commits/'.rawurlencode($sha));
     }
+
+    public function associatedPullRequests($username, $repository, $sha)
+    {
+        return $this->get('/repos/'.rawurlencode($username).'/'.rawurlencode($repository).'/commits/'.rawurlencode($sha).'/pulls');
+    }
+
+    public function branchesWhereHead($username, $repository, $sha)
+    {
+        return $this->get('/repos/'.rawurlencode($username).'/'.rawurlencode($repository).'/commits/'.rawurlencode($sha).'/branches-where-head');
+    }
 }
