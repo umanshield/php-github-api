@@ -33,11 +33,11 @@ class Commits extends AbstractApi
 
     public function associatedPullRequests($username, $repository, $sha)
     {
-        return $this->get('/repos/'.rawurlencode($username).'/'.rawurlencode($repository).'/commits/'.rawurlencode($sha).'/pulls');
+        return $this->get('/repos/'.rawurlencode($username).'/'.rawurlencode($repository).'/commits/'.rawurlencode($sha).'/pulls', [], ['Accept' => 'application/vnd.github.groot-preview+json']);
     }
 
     public function branchesWhereHead($username, $repository, $sha)
     {
-        return $this->get('/repos/'.rawurlencode($username).'/'.rawurlencode($repository).'/commits/'.rawurlencode($sha).'/branches-where-head');
+        return $this->get('/repos/'.rawurlencode($username).'/'.rawurlencode($repository).'/commits/'.rawurlencode($sha).'/branches-where-head', [], ['Accept' => 'application/vnd.github.groot-preview+json']);
     }
 }
